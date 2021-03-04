@@ -33,6 +33,8 @@ app.layout = html.Div([
     dcc.Graph(id='graph')
 ], className='container')
 
+server = app.server
+
 
 @app.callback(
     dash.dependencies.Output('graph', 'figure'),
