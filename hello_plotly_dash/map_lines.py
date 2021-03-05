@@ -2,7 +2,9 @@ import dash
 import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
+
+import map_fig
 
 # Keep this out of source code repository - save in a file or a database
 VALID_USERNAME_PASSWORD_PAIRS = {
@@ -17,8 +19,9 @@ auth = dash_auth.BasicAuth(
     VALID_USERNAME_PASSWORD_PAIRS
 )
 
-fig = go.Figure(
-    data=go.Bar(y=[2, 3, 1], marker_color='Gold'))
+# fig = go.Figure(
+#     data=go.Bar(y=[2, 3, 1], marker_color='Gold'))
+fig = map_fig.get_fig()
 
 app.layout = html.Div([
     html.H1('Welcome to the app'),
